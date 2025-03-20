@@ -3,6 +3,30 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+.sidebar {
+  height: 100vh; /* Altura completa de la ventana */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Elimina el scroll del contenedor principal */
+}
+
+.navigation-section {
+  flex-shrink: 0; /* Evita que este componente se encoja */
+}
+
+.system-status-section {
+  flex: 1; /* Toma todo el espacio restante */
+  overflow-y: auto; /* Solo agrega scroll en esta sección si es necesario */
+  display: flex;
+  flex-direction: column;
+}
+
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
